@@ -41,7 +41,6 @@ open class EEStackLayout: UIStackView {
         self.distribution = .fill
         self.spacing = 0
         self.axis = .vertical
-        addNewRow()
     }
     
     private func setupRowProperties(rowHeight: CGFloat, subviewHeight: CGFloat, spacingBetweenSubviews: CGFloat, leftPadding: CGFloat, rightPadding: CGFloat) {
@@ -54,6 +53,7 @@ open class EEStackLayout: UIStackView {
     
     // MARK: Layout Setup
     private func setupLayout(subviews: [UIView]) {
+        addNewRow()
         for subview in subviews {
             if doesSubviewFitInRow(subview: subview) {
                 addSubviewToRow(subview: subview)

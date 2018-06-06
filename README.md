@@ -3,12 +3,13 @@
 A vertical stackview which takes subviews with different widths and adds them to it's rows with paddings, spacings etc.
 
 
+
 ## Installation
 
 ### Cocoapods (recommended)
 
 ```
-pod kodu
+pod 'EEStackLayout', '~> 0.1'
 pod install
 ```
 

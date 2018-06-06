@@ -18,7 +18,7 @@ class ViewController: UIViewController {
         
         var viewArray = [UIView]()
         
-        for _ in 1...25 {
+        for _ in 1...5 {
             let view1 = UIView(frame: CGRect(x: 0, y: 0, width: 20, height: 42))
             view1.backgroundColor = .green
             
@@ -38,7 +38,7 @@ class ViewController: UIViewController {
         }
         
         
-        let stackLayout = EEStackLayout(frame: CGRect(x: 0, y: 0, width: 380, height: 0),
+        let stackLayout = EEStackLayout(frame: CGRect(x: 0, y: 50, width: 200, height: 0),
                                         rowHeight: CGFloat(42),
                                         subviewHeight: CGFloat(20),
                                         spacingBetweenSubviews: CGFloat(15),
