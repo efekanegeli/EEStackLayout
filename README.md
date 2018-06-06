@@ -59,4 +59,4 @@ subviews -> View array of elements to be added to the main stack view
 
 ## License
 
-This project is licensed under the MIT License
+MIT License, Copyright (c) 2018 Efekan Egeli, [@efekanegeli](https://twitter.com/efekanegeli)
