@@ -2,7 +2,7 @@
 
 A vertical stackview which takes subviews with different widths and adds them to it's rows with paddings, spacings etc.
 
-
+![Screenshot](https://github.com/efekanegeli/EEStackLayout/blob/master/example.png)
 
 ## Installation
 
