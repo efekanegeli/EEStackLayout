@@ -12,6 +12,7 @@
 		E29F7FEF20C69DAE009316B4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E29F7FED20C69DAE009316B4 /* Main.storyboard */; };
 		E29F7FF120C69DB0009316B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E29F7FF020C69DB0009316B4 /* Assets.xcassets */; };
 		E29F7FF420C69DB0009316B4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E29F7FF220C69DB0009316B4 /* LaunchScreen.storyboard */; };
+		E29F7FFE20C69FC9009316B4 /* EEStackLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29F7FFD20C69FC9009316B4 /* EEStackLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		E29F7FF020C69DB0009316B4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E29F7FF320C69DB0009316B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E29F7FF520C69DB0009316B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E29F7FFD20C69FC9009316B4 /* EEStackLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EEStackLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			children = (
 				E29F7FE920C69DAE009316B4 /* AppDelegate.swift */,
 				E29F7FEB20C69DAE009316B4 /* ViewController.swift */,
+				E29F7FFD20C69FC9009316B4 /* EEStackLayout.swift */,
 				E29F7FED20C69DAE009316B4 /* Main.storyboard */,
 				E29F7FF020C69DB0009316B4 /* Assets.xcassets */,
 				E29F7FF220C69DB0009316B4 /* LaunchScreen.storyboard */,
@@ -137,6 +140,7 @@
 			files = (
 				E29F7FEC20C69DAE009316B4 /* ViewController.swift in Sources */,
 				E29F7FEA20C69DAE009316B4 /* AppDelegate.swift in Sources */,
+				E29F7FFE20C69FC9009316B4 /* EEStackLayout.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
