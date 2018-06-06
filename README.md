@@ -1,87 +1,62 @@
-# Project Title
+# EEStackLayout
 
-One Paragraph of project description goes here
+A vertical stackview which takes subviews with different widths and adds them to it's rows with paddings, spacings etc.
 
-## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+## Installation
 
-### Prerequisites
-
-What things you need to install the software and how to install them
+### Cocoapods (recommended)
 
 ```
-Give examples
+pod kodu
+pod install
 ```
 
-### Installing
-
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
+### Manual
 
 ```
-Give the example
+1. Download .zip file
+2. Just drag and drop EEStackLayout.swift to your project
 ```
 
-And repeat
+## Example Usage
 
 ```
-until finished
+for _ in 1...25 {
+  let view1 = UIView(frame: CGRect(x: 0, y: 0, width: 20, height: 42))
+  view1.backgroundColor = .green
+  let view2 = UIView(frame: CGRect(x: 0, y: 0, width: 30, height: 42))
+  view2.backgroundColor = .blue
+  let view3 = UIView(frame: CGRect(x: 0, y: 0, width: 40, height: 42))
+  view3.backgroundColor = .yellow
+  let view4 = UIView(frame: CGRect(x: 0, y: 0, width: 50, height: 42))
+  view4.backgroundColor = .black
+  viewArray.append(view1)
+  viewArray.append(view2)
+  viewArray.append(view3)
+  viewArray.append(view4)
+}
+
+let stackLayout = EEStackLayout(frame: CGRect(x: 0, y: 0, width: 380, height: 0),
+                                        rowHeight: CGFloat(42),
+                                        subviewHeight: CGFloat(20),
+                                        spacingBetweenSubviews: CGFloat(15),
+                                        leftPadding: CGFloat(15),
+                                        rightPadding: CGFloat(15),
+                                        subviews:viewArray)
+self.view.addSubview(stackLayout)
 ```
 
-End with an example of getting some data out of the system or using it for a little demo
-
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
+## Init Properties
 ```
-Give an example
+rowHeight -> Row height of the main vertical stack view
+subviewHeight -> Height of the subviews which will be added to the rows
+spacingBetweenSubviews -> Space between subviews within the same row
+leftPadding -> Left padding of first subview in the rows
+rightPadding -> Right padding of the last subview in the rows
+subviews -> View array of elements to be added to the main stack view
 ```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
-
-## Built With
-
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
-
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags).
-
-## Authors
-
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-## Acknowledgments
-
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
+This project is licensed under the MIT License
