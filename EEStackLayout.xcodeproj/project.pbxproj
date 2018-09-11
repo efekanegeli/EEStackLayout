@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E28AED202147A3180077B0A6 /* EEStackLayoutTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28AED1F2147A3180077B0A6 /* EEStackLayoutTests.swift */; };
+		E28AED292147A3450077B0A6 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28AED282147A3450077B0A6 /* Tests.swift */; };
+		E28AED2A2147A44D0077B0A6 /* EEStackLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29F7FFD20C69FC9009316B4 /* EEStackLayout.swift */; };
 		E29F7FEA20C69DAE009316B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29F7FE920C69DAE009316B4 /* AppDelegate.swift */; };
 		E29F7FEC20C69DAE009316B4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29F7FEB20C69DAE009316B4 /* ViewController.swift */; };
 		E29F7FEF20C69DAE009316B4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E29F7FED20C69DAE009316B4 /* Main.storyboard */; };
@@ -15,7 +18,21 @@
 		E29F7FFE20C69FC9009316B4 /* EEStackLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29F7FFD20C69FC9009316B4 /* EEStackLayout.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		E28AED222147A3180077B0A6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E29F7FDE20C69DAE009316B4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E29F7FE520C69DAE009316B4;
+			remoteInfo = EEStackLayout;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		E28AED1D2147A3180077B0A6 /* EEStackLayoutTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EEStackLayoutTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E28AED1F2147A3180077B0A6 /* EEStackLayoutTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EEStackLayoutTests.swift; sourceTree = "<group>"; };
+		E28AED212147A3180077B0A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E28AED282147A3450077B0A6 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		E29F7FE620C69DAE009316B4 /* EEStackLayout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EEStackLayout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E29F7FE920C69DAE009316B4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E29F7FEB20C69DAE009316B4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -27,6 +44,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		E28AED1A2147A3180077B0A6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E29F7FE320C69DAE009316B4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -37,10 +61,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E28AED1E2147A3180077B0A6 /* EEStackLayoutTests */ = {
+			isa = PBXGroup;
+			children = (
+				E28AED1F2147A3180077B0A6 /* EEStackLayoutTests.swift */,
+				E28AED212147A3180077B0A6 /* Info.plist */,
+			);
+			path = EEStackLayoutTests;
+			sourceTree = "<group>";
+		};
 		E29F7FDD20C69DAE009316B4 = {
 			isa = PBXGroup;
 			children = (
 				E29F7FE820C69DAE009316B4 /* EEStackLayout */,
+				E28AED1E2147A3180077B0A6 /* EEStackLayoutTests */,
 				E29F7FE720C69DAE009316B4 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -49,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				E29F7FE620C69DAE009316B4 /* EEStackLayout.app */,
+				E28AED1D2147A3180077B0A6 /* EEStackLayoutTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -59,6 +94,7 @@
 				E29F7FE920C69DAE009316B4 /* AppDelegate.swift */,
 				E29F7FEB20C69DAE009316B4 /* ViewController.swift */,
 				E29F7FFD20C69FC9009316B4 /* EEStackLayout.swift */,
+				E28AED282147A3450077B0A6 /* Tests.swift */,
 				E29F7FED20C69DAE009316B4 /* Main.storyboard */,
 				E29F7FF020C69DB0009316B4 /* Assets.xcassets */,
 				E29F7FF220C69DB0009316B4 /* LaunchScreen.storyboard */,
@@ -70,6 +106,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		E28AED1C2147A3180077B0A6 /* EEStackLayoutTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E28AED242147A3180077B0A6 /* Build configuration list for PBXNativeTarget "EEStackLayoutTests" */;
+			buildPhases = (
+				E28AED192147A3180077B0A6 /* Sources */,
+				E28AED1A2147A3180077B0A6 /* Frameworks */,
+				E28AED1B2147A3180077B0A6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E28AED232147A3180077B0A6 /* PBXTargetDependency */,
+			);
+			name = EEStackLayoutTests;
+			productName = EEStackLayoutTests;
+			productReference = E28AED1D2147A3180077B0A6 /* EEStackLayoutTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		E29F7FE520C69DAE009316B4 /* EEStackLayout */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = E29F7FF820C69DB0009316B4 /* Build configuration list for PBXNativeTarget "EEStackLayout" */;
@@ -97,6 +151,10 @@
 				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = "Efekan Egeli";
 				TargetAttributes = {
+					E28AED1C2147A3180077B0A6 = {
+						CreatedOnToolsVersion = 9.4.1;
+						TestTargetID = E29F7FE520C69DAE009316B4;
+					};
 					E29F7FE520C69DAE009316B4 = {
 						CreatedOnToolsVersion = 9.4;
 					};
@@ -116,11 +174,19 @@
 			projectRoot = "";
 			targets = (
 				E29F7FE520C69DAE009316B4 /* EEStackLayout */,
+				E28AED1C2147A3180077B0A6 /* EEStackLayoutTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		E28AED1B2147A3180077B0A6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E29F7FE420C69DAE009316B4 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -134,6 +200,16 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		E28AED192147A3180077B0A6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E28AED202147A3180077B0A6 /* EEStackLayoutTests.swift in Sources */,
+				E28AED292147A3450077B0A6 /* Tests.swift in Sources */,
+				E28AED2A2147A44D0077B0A6 /* EEStackLayout.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E29F7FE220C69DAE009316B4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -145,6 +221,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E28AED232147A3180077B0A6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E29F7FE520C69DAE009316B4 /* EEStackLayout */;
+			targetProxy = E28AED222147A3180077B0A6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		E29F7FED20C69DAE009316B4 /* Main.storyboard */ = {
@@ -166,6 +250,46 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		E28AED252147A3180077B0A6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = D6D5362XU9;
+				INFOPLIST_FILE = EEStackLayoutTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ss.EEStackLayoutTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EEStackLayout.app/EEStackLayout";
+			};
+			name = Debug;
+		};
+		E28AED262147A3180077B0A6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = D6D5362XU9;
+				INFOPLIST_FILE = EEStackLayoutTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ss.EEStackLayoutTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EEStackLayout.app/EEStackLayout";
+			};
+			name = Release;
+		};
 		E29F7FF620C69DB0009316B4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -319,6 +443,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		E28AED242147A3180077B0A6 /* Build configuration list for PBXNativeTarget "EEStackLayoutTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E28AED252147A3180077B0A6 /* Debug */,
+				E28AED262147A3180077B0A6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		E29F7FE120C69DAE009316B4 /* Build configuration list for PBXProject "EEStackLayout" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
