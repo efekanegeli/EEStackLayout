@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		E28AED202147A3180077B0A6 /* EEStackLayoutTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28AED1F2147A3180077B0A6 /* EEStackLayoutTests.swift */; };
-		E28AED292147A3450077B0A6 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28AED282147A3450077B0A6 /* Tests.swift */; };
 		E28AED2A2147A44D0077B0A6 /* EEStackLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29F7FFD20C69FC9009316B4 /* EEStackLayout.swift */; };
 		E29F7FEA20C69DAE009316B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29F7FE920C69DAE009316B4 /* AppDelegate.swift */; };
 		E29F7FEC20C69DAE009316B4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29F7FEB20C69DAE009316B4 /* ViewController.swift */; };
@@ -32,7 +31,6 @@
 		E28AED1D2147A3180077B0A6 /* EEStackLayoutTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EEStackLayoutTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E28AED1F2147A3180077B0A6 /* EEStackLayoutTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EEStackLayoutTests.swift; sourceTree = "<group>"; };
 		E28AED212147A3180077B0A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E28AED282147A3450077B0A6 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		E29F7FE620C69DAE009316B4 /* EEStackLayout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EEStackLayout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E29F7FE920C69DAE009316B4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E29F7FEB20C69DAE009316B4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -94,7 +92,6 @@
 				E29F7FE920C69DAE009316B4 /* AppDelegate.swift */,
 				E29F7FEB20C69DAE009316B4 /* ViewController.swift */,
 				E29F7FFD20C69FC9009316B4 /* EEStackLayout.swift */,
-				E28AED282147A3450077B0A6 /* Tests.swift */,
 				E29F7FED20C69DAE009316B4 /* Main.storyboard */,
 				E29F7FF020C69DB0009316B4 /* Assets.xcassets */,
 				E29F7FF220C69DB0009316B4 /* LaunchScreen.storyboard */,
@@ -205,7 +202,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E28AED202147A3180077B0A6 /* EEStackLayoutTests.swift in Sources */,
-				E28AED292147A3450077B0A6 /* Tests.swift in Sources */,
 				E28AED2A2147A44D0077B0A6 /* EEStackLayout.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
