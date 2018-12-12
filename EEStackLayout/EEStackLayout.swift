@@ -94,7 +94,7 @@ open class EEStackLayout: UIStackView {
     private func addNewRow() {
         totalSubviewWidth = insets.left + insets.right
         rowView = UIView()
-        rowView.backgroundColor = .yellow
+        rowView.backgroundColor = .clear
         rowView.heightAnchor.constraint(equalToConstant: rowHeight).isActive = true
         self.addArrangedSubview(rowView)
     }
