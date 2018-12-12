@@ -4,7 +4,7 @@ A vertical stackview which takes subviews with different widths and adds them to
 
 
 [![Twitter: @efekanegeli](https://img.shields.io/badge/contact-%40efekanegeli-blue.svg)](https://twitter.com/efekanegeli)
-[![CocoaPods](https://img.shields.io/badge/pod-v0.1.1-blue.svg)](https://github.com/efekanegeli/EEStackLayout)
+[![CocoaPods](https://img.shields.io/badge/pod-v0.1.6-blue.svg)](https://github.com/efekanegeli/EEStackLayout)
 
 ![Screenshot](https://github.com/efekanegeli/EEStackLayout/blob/master/example1.png)
 
