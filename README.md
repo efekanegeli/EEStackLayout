@@ -27,6 +27,7 @@ pod install
 ## Example Usage
 
 ```
+var viewArray = [UIView]()
 for _ in 1...25 {
   let view1 = UIView(frame: CGRect(x: 0, y: 0, width: 20, height: 42))
   view1.backgroundColor = .green
@@ -54,11 +55,10 @@ self.view.addSubview(stackLayout)
 
 ## Init Properties
 ```
+minimumLineSpacing -> Spacing between rows
 rowHeight -> Row height of the main vertical stack view
-subviewHeight -> Height of the subviews which will be added to the rows
-spacingBetweenSubviews -> Space between subviews within the same row
-leftPadding -> Left padding of first subview in the rows
-rightPadding -> Right padding of the last subview in the rows
+minimumInteritemSpacing -> Spacing between items in a row
+insets -> Layout margins of main vertical stack view
 subviews -> View array of elements to be added to the main stack view
 ```
 

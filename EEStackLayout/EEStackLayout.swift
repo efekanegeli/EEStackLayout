@@ -17,15 +17,15 @@ open class EEStackLayout: UIStackView {
     private var totalSubviewWidthWithSpacings = CGFloat(0)
     
     // MARK: Private UI Related Variables
-    private let itemHeight: CGFloat
+    private let rowHeight: CGFloat
     private let minimumInteritemSpacing: CGFloat
     private let minimumLineSpacing: CGFloat
     private let insets: UIEdgeInsets
     
     // MARK: Initializers
-    public init(frame: CGRect, itemHeight: CGFloat, minimumInteritemSpacing: CGFloat, minimumLineSpacing: CGFloat, insets: UIEdgeInsets, subviews: [UIView]) {
+    public init(frame: CGRect, rowHeight: CGFloat, minimumInteritemSpacing: CGFloat, minimumLineSpacing: CGFloat, insets: UIEdgeInsets, subviews: [UIView]) {
         
-        self.itemHeight = itemHeight
+        self.rowHeight = rowHeight
         self.minimumInteritemSpacing = minimumInteritemSpacing
         self.minimumLineSpacing = minimumLineSpacing
         self.insets = insets
@@ -62,7 +62,7 @@ open class EEStackLayout: UIStackView {
                 addSubviewToRow(subview: subview)
             }
         }
-        let height = (CGFloat(arrangedSubviews.count) * itemHeight) + (CGFloat(arrangedSubviews.count - 1) * minimumLineSpacing) + insets.top + insets.bottom
+        let height = (CGFloat(arrangedSubviews.count) * rowHeight) + (CGFloat(arrangedSubviews.count - 1) * minimumLineSpacing) + insets.top + insets.bottom
         self.frame = CGRect(x: self.frame.origin.x, y: self.frame.origin.y, width: self.frame.size.width, height: height)
     }
     
@@ -85,7 +85,7 @@ open class EEStackLayout: UIStackView {
         } else {
             subview.leadingAnchor.constraint(equalTo: previousSubview.trailingAnchor, constant: minimumInteritemSpacing).isActive = true
         }
-        subview.heightAnchor.constraint(equalToConstant: itemHeight).isActive = true
+        subview.heightAnchor.constraint(equalToConstant: rowHeight).isActive = true
         subview.widthAnchor.constraint(equalToConstant: subview.frame.size.width).isActive = true
         subview.centerYAnchor.constraint(equalTo: rowView.centerYAnchor).isActive = true
         previousSubview = subview
@@ -94,8 +94,8 @@ open class EEStackLayout: UIStackView {
     private func addNewRow() {
         totalSubviewWidth = insets.left + insets.right
         rowView = UIView()
-        rowView.backgroundColor = .clear
-        rowView.heightAnchor.constraint(equalToConstant: itemHeight).isActive = true
+        rowView.backgroundColor = .yellow
+        rowView.heightAnchor.constraint(equalToConstant: rowHeight).isActive = true
         self.addArrangedSubview(rowView)
     }
 }
