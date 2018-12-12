@@ -43,13 +43,12 @@ for _ in 1...25 {
   viewArray.append(view4)
 }
 
-let stackLayout = EEStackLayout(frame: CGRect(x: 0, y: 0, width: 380, height: 0),
-                                        rowHeight: CGFloat(42),
-                                        subviewHeight: CGFloat(20),
-                                        spacingBetweenSubviews: CGFloat(15),
-                                        leftPadding: CGFloat(15),
-                                        rightPadding: CGFloat(15),
-                                        subviews:viewArray)
+let stackLayout = EEStackLayout(frame: CGRect(x: 0, y: 50, width: 200, height: 0),
+                                        rowHeight: 20,
+                                        minimumInteritemSpacing: 15,
+                                        minimumLineSpacing: 10,
+                                        insets: UIEdgeInsets(top: 15, left: 15, bottom: 15, right: 15),
+                                        subviews: viewArray)
 self.view.addSubview(stackLayout)
 ```
 
