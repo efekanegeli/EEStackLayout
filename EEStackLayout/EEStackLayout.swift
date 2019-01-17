@@ -12,26 +12,41 @@ open class EEStackLayout: UIStackView {
     
     // MARK: Private Logical Variables
     private var totalSubviewWidth = CGFloat(0)
+    private var totalSubviewHeight = CGFloat(0)
     private var rowView = UIView()
+    private var columnView = UIView()
     private var previousSubview = UIView()
     private var totalSubviewWidthWithSpacings = CGFloat(0)
+    private var totalSubviewHeightWithSpacings = CGFloat(0)
     
     // MARK: Private UI Related Variables
-    private let rowHeight: CGFloat
+    private var rowHeight: CGFloat = .leastNonzeroMagnitude
+    private var columnWidth: CGFloat = .leastNonzeroMagnitude
+    private var orientation: NSLayoutConstraint.Axis = .vertical
     private let minimumInteritemSpacing: CGFloat
-    private let minimumLineSpacing: CGFloat
+    private let minimumItemSpacing: CGFloat
     private let insets: UIEdgeInsets
     
     // MARK: Initializers
-    public init(frame: CGRect, rowHeight: CGFloat, minimumInteritemSpacing: CGFloat, minimumLineSpacing: CGFloat, insets: UIEdgeInsets, subviews: [UIView]) {
+    
+    public init(frame: CGRect, columnWidth: CGFloat? = nil, rowHeight: CGFloat? = nil, minimumInteritemSpacing: CGFloat, minimumItemSpacing: CGFloat, insets: UIEdgeInsets, subviews: [UIView]) {
+        if let heightOfEachRow = rowHeight {
+            self.rowHeight = heightOfEachRow
+            self.orientation = .vertical
+        }
+        if let widthOfEachColumn = columnWidth {
+            self.columnWidth = widthOfEachColumn
+            self.orientation = .horizontal
+        }
         
-        self.rowHeight = rowHeight
         self.minimumInteritemSpacing = minimumInteritemSpacing
-        self.minimumLineSpacing = minimumLineSpacing
+        self.minimumItemSpacing = minimumItemSpacing
         self.insets = insets
-        
         super.init(frame: frame)
-        
+        setupUI(subviews: subviews)
+    }
+    
+    private func setupUI(subviews: [UIView]) {
         setupMainStackView()
         setupLayout(subviews: subviews)
     }
@@ -45,25 +60,45 @@ open class EEStackLayout: UIStackView {
     private func setupMainStackView() {
         self.alignment = .fill
         self.distribution = .fill
-        self.spacing = minimumLineSpacing
-        self.axis = .vertical
+        self.spacing = minimumItemSpacing
+        self.axis = orientation
         self.layoutMargins = insets
         self.isLayoutMarginsRelativeArrangement = true
     }
     
     // MARK: Layout Setup
     private func setupLayout(subviews: [UIView]) {
-        addNewRow()
+        if orientation == .vertical {
+            addNewRow()
+        } else {
+            addNewColumn()
+        }
+        
         for subview in subviews {
-            if doesSubviewFitInRow(subview: subview) {
-                addSubviewToRow(subview: subview)
+            if orientation == .vertical {
+                if doesSubviewFitInRow(subview: subview) {
+                    addSubviewToRow(subview: subview)
+                } else {
+                    addNewRow()
+                    addSubviewToRow(subview: subview)
+                }
             } else {
-                addNewRow()
-                addSubviewToRow(subview: subview)
+                if doesSubviewFitInColumn(subview: subview) {
+                    addSubviewToColumn(subview: subview)
+                } else {
+                    addNewColumn()
+                    addSubviewToColumn(subview: subview)
+                }
             }
         }
-        let height = (CGFloat(arrangedSubviews.count) * rowHeight) + (CGFloat(arrangedSubviews.count - 1) * minimumLineSpacing) + insets.top + insets.bottom
-        self.frame = CGRect(x: self.frame.origin.x, y: self.frame.origin.y, width: self.frame.size.width, height: height)
+        
+        if orientation == .vertical {
+            let height = (CGFloat(arrangedSubviews.count) * rowHeight) + (CGFloat(arrangedSubviews.count - 1) * minimumItemSpacing) + insets.top + insets.bottom
+            self.frame = CGRect(x: self.frame.origin.x, y: self.frame.origin.y, width: self.frame.size.width, height: height)
+        } else {
+            let width = (CGFloat(arrangedSubviews.count) * columnWidth) + (CGFloat(arrangedSubviews.count - 1) * minimumItemSpacing) + insets.left + insets.right
+            self.frame = CGRect(x: self.frame.origin.x, y: self.frame.origin.y, width: width, height: self.frame.size.height)
+        }
     }
     
     // MARK: Row Operations
@@ -97,5 +132,38 @@ open class EEStackLayout: UIStackView {
         rowView.backgroundColor = .clear
         rowView.heightAnchor.constraint(equalToConstant: rowHeight).isActive = true
         self.addArrangedSubview(rowView)
+    }
+    
+    // MARK: Column Operations
+    private func doesSubviewFitInColumn(subview: UIView) -> Bool {
+        totalSubviewHeightWithSpacings = CGFloat(columnView.subviews.count - 1) * minimumInteritemSpacing + totalSubviewHeight
+        if totalSubviewHeightWithSpacings > 0 && self.frame.size.height - totalSubviewHeightWithSpacings < subview.frame.size.height + minimumInteritemSpacing {
+            return false
+        } else {
+            return true
+        }
+    }
+
+    private func addSubviewToColumn(subview: UIView) {
+        subview.translatesAutoresizingMaskIntoConstraints = false
+        columnView.addSubview(subview)
+        totalSubviewHeight += subview.frame.size.height
+        if columnView.subviews.count == 1 {
+            subview.topAnchor.constraint(equalTo: columnView.topAnchor, constant: insets.top).isActive = true
+        } else {
+            subview.topAnchor.constraint(equalTo: previousSubview.bottomAnchor, constant: minimumInteritemSpacing).isActive = true
+        }
+        subview.widthAnchor.constraint(equalToConstant: columnWidth).isActive = true
+        subview.heightAnchor.constraint(equalToConstant: subview.frame.size.height).isActive = true
+        subview.centerXAnchor.constraint(equalTo: columnView.centerXAnchor).isActive = true
+        previousSubview = subview
+    }
+
+    private func addNewColumn() {
+        totalSubviewHeight = insets.top + insets.bottom
+        columnView = UIView()
+        columnView.backgroundColor = .clear
+        columnView.widthAnchor.constraint(equalToConstant: columnWidth).isActive = true
+        self.addArrangedSubview(columnView)
     }
 }
