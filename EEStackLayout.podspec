@@ -1,10 +1,10 @@
 Pod::Spec.new do |s|
   s.name             = 'EEStackLayout'
-  s.version          = '0.1.6'
-  s.summary          = 'A structured vertical stackview'
+  s.version          = '0.1.7'
+  s.summary          = 'A structured vertical/horizontal stackview'
 
   s.description      = <<-DESC
-A structured vertical stackview which takes subviews with different widths and adds them to its rows with paddings, spacings etc.
+A structured vertical/horizontal stackview which takes subviews with different widths and adds them to its rows/columns depending on the target orientation with paddings, spacings etc.
                        DESC
 
   s.homepage         = 'https://github.com/efekanegeli/EEStackLayout'
