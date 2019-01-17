@@ -45,11 +45,11 @@ class ViewController: UIViewController {
             
             // Vertical EEStackLayout setup
             stackLayout = EEStackLayout(frame: CGRect(x: 0, y: 50, width: 300, height: 0),
-                                            rowHeight: 20,
-                                            minimumInteritemSpacing: 15,
-                                            minimumItemSpacing: 10,
-                                            insets: UIEdgeInsets(top: 15, left: 15, bottom: 15, right: 15),
-                                            subviews: viewArray)
+                                        rowHeight: 20,
+                                        minimumInteritemSpacing: 15,
+                                        minimumItemSpacing: 10,
+                                        insets: UIEdgeInsets(top: 15, left: 15, bottom: 15, right: 15),
+                                        subviews: viewArray)
             
         } else {
             // Horizontal EEStackLayout
@@ -72,11 +72,11 @@ class ViewController: UIViewController {
             
             // Horizontal EEStackLayout setup
             stackLayout = EEStackLayout(frame: CGRect(x: 0, y: 50, width: 0, height: 400),
-                                            columnWidth: 20,
-                                            minimumInteritemSpacing: 15,
-                                            minimumItemSpacing: 10,
-                                            insets: UIEdgeInsets(top: 15, left: 15, bottom: 15, right: 15),
-                                            subviews: viewArray)
+                                        columnWidth: 20,
+                                        minimumInteritemSpacing: 15,
+                                        minimumItemSpacing: 10,
+                                        insets: UIEdgeInsets(top: 15, left: 15, bottom: 15, right: 15),
+                                        subviews: viewArray)
         }
         
         self.view.addSubview(stackLayout)
