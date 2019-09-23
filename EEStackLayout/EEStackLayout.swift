@@ -18,6 +18,10 @@ open class EEStackLayout: UIStackView {
     private var previousSubview = UIView()
     private var totalSubviewWidthWithSpacings = CGFloat(0)
     private var totalSubviewHeightWithSpacings = CGFloat(0)
+    private var maximumColumnCount: Int32 = INT_MAX
+    private var maximumRowCount: Int32 = INT_MAX
+    private var rowCount: Int32 = 0
+    private var columnCount: Int32 = 0
     
     // MARK: Private UI Related Variables
     private var rowHeight: CGFloat = .leastNonzeroMagnitude
@@ -29,7 +33,15 @@ open class EEStackLayout: UIStackView {
     
     // MARK: Initializers
     
-    public init(frame: CGRect, columnWidth: CGFloat? = nil, rowHeight: CGFloat? = nil, minimumInteritemSpacing: CGFloat, minimumItemSpacing: CGFloat, insets: UIEdgeInsets, subviews: [UIView]) {
+    public init(frame: CGRect,
+                columnWidth: CGFloat? = nil,
+                maximumColumnCount: Int32? = nil,
+                rowHeight: CGFloat? = nil,
+                maximumRowCount: Int32? = nil,
+                minimumInteritemSpacing: CGFloat,
+                minimumItemSpacing: CGFloat,
+                insets: UIEdgeInsets,
+                subviews: [UIView]) {
         if let heightOfEachRow = rowHeight {
             self.rowHeight = heightOfEachRow
             self.orientation = .vertical
@@ -37,6 +49,12 @@ open class EEStackLayout: UIStackView {
         if let widthOfEachColumn = columnWidth {
             self.columnWidth = widthOfEachColumn
             self.orientation = .horizontal
+        }
+        if let maxColumnCount = maximumColumnCount {
+            self.maximumColumnCount = maxColumnCount
+        }
+        if let maxRowCount = maximumRowCount {
+            self.maximumRowCount = maxRowCount
         }
         
         self.minimumInteritemSpacing = minimumInteritemSpacing
@@ -78,14 +96,14 @@ open class EEStackLayout: UIStackView {
             if orientation == .vertical {
                 if doesSubviewFitInRow(subview: subview) {
                     addSubviewToRow(subview: subview)
-                } else {
+                } else if rowCount < maximumRowCount {
                     addNewRow()
                     addSubviewToRow(subview: subview)
                 }
             } else {
                 if doesSubviewFitInColumn(subview: subview) {
                     addSubviewToColumn(subview: subview)
-                } else {
+                } else if columnCount < maximumColumnCount {
                     addNewColumn()
                     addSubviewToColumn(subview: subview)
                 }
@@ -127,6 +145,7 @@ open class EEStackLayout: UIStackView {
     }
     
     private func addNewRow() {
+        rowCount += 1
         totalSubviewWidth = insets.left + insets.right
         rowView = UIView()
         rowView.backgroundColor = .clear
@@ -160,6 +179,7 @@ open class EEStackLayout: UIStackView {
     }
 
     private func addNewColumn() {
+        columnCount += 1
         totalSubviewHeight = insets.top + insets.bottom
         columnView = UIView()
         columnView.backgroundColor = .clear

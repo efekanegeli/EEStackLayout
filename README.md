@@ -4,7 +4,7 @@ A vertical stackview which takes subviews with different widths and adds them to
 
 
 [![Twitter: @efekanegeli](https://img.shields.io/badge/contact-%40efekanegeli-blue.svg)](https://twitter.com/efekanegeli)
-[![CocoaPods](https://img.shields.io/badge/pod-v0.1.7-blue.svg)](https://github.com/efekanegeli/EEStackLayout)
+[![CocoaPods](https://img.shields.io/badge/pod-v0.1.8-blue.svg)](https://github.com/efekanegeli/EEStackLayout)
 
 ![Screenshot](https://github.com/efekanegeli/EEStackLayout/blob/master/example1.png)
 
@@ -97,7 +97,9 @@ self.view.addSubview(stackLayout)
 ```
 minimumItemSpacing -> Spacing between rows(vertical layout) or colums(horizontal layout)
 rowHeight -> Row height of the main vertical stack view
+maximumRowCount -> Maximum row count of the vertical stack view, ignores the rest of the subviews if the actual row count exceeds the limit
 columnWidth -> Column width of the main horizontal stack view
+maximumColumnCount -> Maximum column count of the horizontal stack view, ignores the rest of the subviews if the actual column count exceeds the limit
 minimumInteritemSpacing -> Spacing between items in a row/column
 insets -> Layout margins of main vertical stack view
 subviews -> View array of elements to be added to the main stack view
