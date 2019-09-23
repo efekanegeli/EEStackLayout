@@ -13,6 +13,7 @@ A structured vertical/horizontal stackview which takes subviews with different w
   s.source           = { :git => 'https://github.com/efekanegeli/EEStackLayout.git', :tag => s.version.to_s }
 
   s.ios.deployment_target = '10.0'
+  s.swift_version = '>= 4.0'
   s.source_files = 'EEStackLayout/EEStackLayout.swift'
 
 end
