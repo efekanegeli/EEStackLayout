@@ -32,7 +32,6 @@ open class EEStackLayout: UIStackView {
     private let insets: UIEdgeInsets
     
     // MARK: Initializers
-    
     public init(frame: CGRect,
                 columnWidth: CGFloat? = nil,
                 maximumColumnCount: Int32? = nil,
@@ -185,5 +184,14 @@ open class EEStackLayout: UIStackView {
         columnView.backgroundColor = .clear
         columnView.widthAnchor.constraint(equalToConstant: columnWidth).isActive = true
         self.addArrangedSubview(columnView)
+    }
+    
+    // MARK: Public Methods
+    func getRowCount() -> Int {
+        return Int(rowCount)
+    }
+    
+    func getColumnCount() -> Int {
+        return Int(columnCount)
     }
 }
