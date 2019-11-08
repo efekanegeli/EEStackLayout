@@ -187,11 +187,11 @@ open class EEStackLayout: UIStackView {
     }
     
     // MARK: Public Methods
-    func getRowCount() -> Int {
+    public func getRowCount() -> Int {
         return Int(rowCount)
     }
     
-    func getColumnCount() -> Int {
+    public func getColumnCount() -> Int {
         return Int(columnCount)
     }
 }
