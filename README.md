@@ -17,6 +17,12 @@ pod 'EEStackLayout', '~> 0.1'
 pod install
 ```
 
+### Swift Package Manager
+
+```
+.package(url: "https://github.com/efekanegeli/EEStackLayout.git", from: "0.1.11")
+```
+
 ### Manual
 
 ```
