@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'EEStackLayout'
-  s.version          = '0.1.10'
+  s.version          = '0.1.11'
   s.summary          = 'A structured vertical/horizontal stackview'
 
   s.description      = <<-DESC
@@ -14,6 +14,6 @@ A structured vertical/horizontal stackview which takes subviews with different w
 
   s.ios.deployment_target = '10.0'
   s.swift_version = '4.0'
-  s.source_files = 'EEStackLayout/EEStackLayout.swift'
+  s.source_files = 'Sources/EEStackLayout/EEStackLayout.swift'
 
 end
